@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="collector.output.filename">hearings.xls</entry>
+    <entry key="collector.load.days">1</entry>
+    <entry key="collector.load.timeout.millis">3000</entry>
+    <entry key="collector.source.urls">
+        https://vos--spb.sudrf.ru/modules.php
+        https://primorsky--spb.sudrf.ru/modules.php
+        https://smolninsky--spb.sudrf.ru/modules.php
+    </entry>
+</properties>

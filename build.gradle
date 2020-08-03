@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'org.home.hearing.collector.Application'
+}
+
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
+    compile group: 'org.apache.poi', name: 'poi', version: '3.15'
+    runtime group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+}
+
+compileJava {
+    inputs.property("moduleName", "org.home.hearing.collector.main")
+    doFirst {
+        options.encoding = 'UTF-8'
+        options.compilerArgs += [
+                '--module-path', classpath.asPath
+        ]
+        classpath = files()
+    }
+}
